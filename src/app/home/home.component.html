@@ -1,3 +1,26 @@
 Hola {{ title }}
-<button (click)="cambiarTitle()" [disabled]="modificado">Cambiar Title</button>
+<button
+  (click)="cambiarTitle()"
+  [class]="cssTitleClass"
+  [disabled]="modificado"
+>
+  Cambiar Title
+</button>
 <input type="text" [(ngModel)]="title" />
+
+<input type="number" [(ngModel)]="op1" />
+<input type="number" [(ngModel)]="op2" />
+<div [class]="cssClassResult">{{ resultado }}</div>
+<br />
+<div [ngClass]="{ error: resultado < 0, ok: resultado > 0 }">
+  {{ resultado }}
+</div>
+
+<button (click)="calcular()">Calcular</button>
+
+<h2>ngFor</h2>
+<div *ngFor="let product of products">
+  {{ product.name }}
+</div>
+
+<button (click)="changeProducts()">Change Products</button>
