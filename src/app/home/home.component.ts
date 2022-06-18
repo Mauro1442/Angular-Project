@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-home',
@@ -6,47 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  title: any = 'Nombre';
-  modificado: any = false;
-  cssTitleClass: string = '';
-  op1: number = 0;
-  op2: number = 0;
-  resultado: any;
-  cssClassResult: string = '';
-  products: any = [
-    {
-      id: 1,
-      name: 'moto g',
-    },
-    {
-      id: 2,
-      name: 'moto x',
-    },
-  ];
+  products: any = [];
 
-  constructor() {
-    let title2 = '';
-  }
-  cambiarTitle() {
-    this.title = '';
-    this.modificado = true;
-    this.cssTitleClass = 'error';
-  }
-  calcular() {
-    this.resultado = this.op1 + this.op2;
-    if (this.resultado > 0) {
-      this.cssClassResult = 'ok';
-    } else {
-      this.cssClassResult = 'error';
-    }
-  }
-  changeProducts() {
-    this.products = [
-      {
-        id: 3,
-        name: 'iPhone 12',
+  constructor(private productsService: ProductsService) {
+    this.productsService.getAll().subscribe(
+      (data: any) => {
+        console.log(data);
+        this.products = data['results'];
       },
-    ];
+      (error) => {
+        console.log(error);
+      }
+    );
   }
+
   ngOnInit(): void {}
 }
