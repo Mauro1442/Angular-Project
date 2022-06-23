@@ -4,13 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { HomeComponent } from './Pages/home/home.component';
+import { LoginComponent } from './Pages/login/login.component';
+import { SignupComponent } from './Pages/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './Components/menu/menu.component';
+import { DetailComponent } from './Pages/detail/detail.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, SignupComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, SignupComponent, MenuComponent, DetailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

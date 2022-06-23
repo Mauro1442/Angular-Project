@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../services/products.service';
+import { ProductsService } from '../../services/products.service';
+import { Product } from 'src/interfaces/Products';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +8,18 @@ import { ProductsService } from '../services/products.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  products: any = [];
+  products: Product[] = [];
 
   constructor(private productsService: ProductsService) {
-    this.productsService.getAll().subscribe(
-      (data: any) => {
+    this.productsService.getAll().subscribe({
+      next: (data: Product[]) => {
         console.log(data);
-        this.products = data['results'];
+        this.products = data;
       },
-      (error) => {
+      error: (error) => {
         console.log(error);
-      }
-    );
+      },
+    });
   }
 
   ngOnInit(): void {}
