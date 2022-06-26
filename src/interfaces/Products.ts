@@ -9,6 +9,7 @@ export interface Product {
   price: number;
   base_price: number;
   thumbnail: string;
+  pictures: [];
   seller_address: {
     id: string;
     comment: string;

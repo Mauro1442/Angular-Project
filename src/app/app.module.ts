@@ -10,15 +10,24 @@ import { SignupComponent } from './Pages/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './Components/menu/menu.component';
 import { DetailComponent } from './Pages/detail/detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, SignupComponent, MenuComponent, DetailComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    SignupComponent,
+    MenuComponent,
+    DetailComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
