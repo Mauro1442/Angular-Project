@@ -4,3 +4,9 @@
 .ok {
   background-color: green;
 }
+#card {
+  max-width: 300px;
+  margin: 25px;
+  display: inline-block;
+  justify-content: flex-start;
+}

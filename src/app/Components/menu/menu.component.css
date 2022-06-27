@@ -1,0 +1,14 @@
+mat-card {
+  position: sticky;
+  justify-content: flex-start;
+  display: flex;
+  z-index: 1;
+  top: 0px;
+  offset: 100px;
+}
+mat-list {
+  display: flex;
+}
+mat-list-item {
+  min-width: 130px;
+}

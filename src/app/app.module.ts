@@ -12,6 +12,12 @@ import { MenuComponent } from './Components/menu/menu.component';
 import { DetailComponent } from './Pages/detail/detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +34,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatListModule,
+    MatMenuModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
