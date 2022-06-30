@@ -17,6 +17,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ProductComponent } from './Components/product/product.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     SignupComponent,
     MenuComponent,
     DetailComponent,
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +39,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatFormFieldModule,
     MatCardModule,
     MatListModule,
+    MatInputModule,
     MatMenuModule,
     MatToolbarModule,
   ],

@@ -17,20 +17,22 @@ export class DetailComponent implements OnInit {
     private productsService: ProductsService
   ) {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.productsService
-      .getById(id)
-      .then((data: {}) => {
-        this.product = data;
-        this.isError = false;
-      })
-      .catch((error: string) => {
-        console.log(error);
-        this.isError = true;
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
+
+    this.init(id);
   }
 
+  async init(id: any) {
+    try {
+      const product = await this.productsService.getById(id);
+      const description = await this.productsService.getDescriptionById(id);
+      this.product = { ...product, ...description };
+      this.isLoading = false;
+      this.isError = false;
+    } catch (e) {
+      console.log(e);
+      this.isLoading = false;
+      this.isError = true;
+    }
+  }
   ngOnInit(): void {}
 }

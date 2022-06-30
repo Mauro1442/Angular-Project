@@ -1,15 +1,11 @@
-<mat-card tabindex="0">
-  <div id="card" *ngFor="let product of products">
-    <mat-card-title>{{ product.title }}</mat-card-title>
-    <img mat-card-sm-image src="{{ product?.thumbnail }}" alt="img" />
-
-    <mat-card-subtitle>${{ product.price }}</mat-card-subtitle>
-    <button
-      mat-raised-button
-      color="primary"
-      routerLink="/detail/{{ product.id }}"
-    >
-      See details
-    </button>
-  </div>
-</mat-card>
+<body>
+  <mat-form-field appearance="fill"
+    ><mat-label>Search for</mat-label>
+    <input matInput [(ngModel)]="search" (change)="handleSearch()" />
+  </mat-form-field>
+  <mat-card tabindex="0">
+    <div id="card" *ngFor="let product of products">
+      <app-product [data]="product"></app-product>
+    </div>
+  </mat-card>
+</body>

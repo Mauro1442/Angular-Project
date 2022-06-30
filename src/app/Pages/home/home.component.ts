@@ -9,9 +9,14 @@ import { Product } from 'src/interfaces/Products';
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
+  search: string = 'binoculars';
 
   constructor(private productsService: ProductsService) {
-    this.productsService.getAll().subscribe({
+    this.getAll();
+  }
+
+  getAll() {
+    this.productsService.getAll(this.search).subscribe({
       next: (data: Product[]) => {
         console.log(data);
         this.products = data;
@@ -20,6 +25,9 @@ export class HomeComponent implements OnInit {
         console.log(error);
       },
     });
+  }
+  handleSearch() {
+    this.getAll();
   }
 
   ngOnInit(): void {}

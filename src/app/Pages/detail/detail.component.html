@@ -2,6 +2,7 @@
 <div *ngIf="!isLoading && !isError">
   <h1>{{ product?.title }}</h1>
   <p>$ {{ product?.price }}</p>
+  <p>{{ product?.plain_text }}</p>
   <img src="{{ product?.pictures[0].url }}" />
   <img src="{{ product?.pictures[1].url }}" />
   <img src="{{ product?.pictures[2].url }}" />

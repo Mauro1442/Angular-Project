@@ -1,0 +1,7 @@
+<mat-card-title>{{ data.title }}</mat-card-title>
+<img mat-card-sm-image src="{{ data?.thumbnail }}" alt="img" />
+
+<mat-card-subtitle>${{ data.price }}</mat-card-subtitle>
+<button mat-raised-button color="primary" routerLink="/detail/{{ data.id }}">
+  See details
+</button>

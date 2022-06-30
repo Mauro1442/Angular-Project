@@ -6,14 +6,5 @@
   background-color: yellow;
 }
 form {
-  display: inline-flexbox;
-
-  width: 300px;
-  margin-left: 100px;
-  justify-content: space-between;
-  align-items: space-between;
-}
-input {
-  display: flex;
-  justify-self: flex-end;
+  background-color: gray;
 }

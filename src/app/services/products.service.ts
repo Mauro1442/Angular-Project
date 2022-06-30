@@ -10,9 +10,11 @@ import { Product, ResponseProduct } from 'src/interfaces/Products';
 })
 export class ProductsService {
   constructor(private http: HttpClient) {}
-  getAll(): Observable<Product[]> {
+  getAll(search: string): Observable<Product[]> {
     return this.http
-      .get<ResponseProduct>(environment.apiEndpoint + 'sites/MLA/search?q=ipod')
+      .get<ResponseProduct>(
+        environment.apiEndpoint + 'sites/MLA/search?q=' + search
+      )
       .pipe(map((value: ResponseProduct) => value.results));
   }
   getAllPromise() {
@@ -25,6 +27,13 @@ export class ProductsService {
   getById(id: string | null): Promise<Product> {
     return lastValueFrom(
       this.http.get<Product>(environment.apiEndpoint + 'items/' + id)
+    );
+  }
+  getDescriptionById(id: string | null): Promise<Product> {
+    return lastValueFrom(
+      this.http.get<Product>(
+        environment.apiEndpoint + 'items/' + id + '/description'
+      )
     );
   }
   create(body: any) {

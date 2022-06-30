@@ -1,46 +1,53 @@
 <form [formGroup]="myForm" (ngSubmit)="signIn()">
   <div>
-    <label>Name</label>
-    <input
-      type="text"
-      formControlName="name"
-      [ngClass]="{
-        error:
-          myForm.get('name')?.hasError('required') && myForm.get('name')?.dirty
-      }"
-    />
+    <mat-form-field appearance="fill">
+      <mat-label> Name</mat-label>
+      <input
+        matInput
+        formControlName="name"
+        [ngClass]="{
+          error:
+            myForm.get('name')?.hasError('required') &&
+            myForm.get('name')?.dirty
+        }"
+      />
+    </mat-form-field>
   </div>
   <div *ngIf="myForm.get('name')?.errors && myForm.get('name')?.dirty">
     *required
   </div>
   <div>
-    <label>Email</label>
-    <input
-      type="email"
-      formControlName="email"
-      [ngClass]="{
-        error:
-          myForm.get('email')?.hasError('required') &&
-          myForm.get('email')?.dirty
-      }"
-    />
+    <mat-form-field appearance="fill">
+      <mat-label> Email</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        [ngClass]="{
+          error:
+            myForm.get('email')?.hasError('required') &&
+            myForm.get('email')?.dirty
+        }"
+      />
+    </mat-form-field>
   </div>
   <div *ngIf="myForm.get('email')?.errors && myForm.get('email')?.dirty">
     *required
   </div>
 
   <div>
-    <label>Password</label>
-    <input
-      type="text"
-      formControlName="pin"
-      [ngClass]="{
-        error:
-          myForm.get('pin')?.hasError('required') && myForm.get('pin')?.dirty,
-        warning:
-          myForm.get('pin')?.hasError('minlength') && myForm.get('pin')?.dirty
-      }"
-    />
+    <mat-form-field appearance="fill">
+      <mat-label> Password</mat-label>
+      <input
+        matInput
+        formControlName="pin"
+        [ngClass]="{
+          error:
+            myForm.get('pin')?.hasError('required') && myForm.get('pin')?.dirty,
+          warning:
+            myForm.get('pin')?.hasError('minlength') && myForm.get('pin')?.dirty
+        }"
+      />
+    </mat-form-field>
   </div>
   <div *ngIf="myForm.get('pin')?.errors && myForm.get('pin')?.dirty">
     <p *ngIf="myForm.get('pin')?.hasError('required')">*required</p>
@@ -49,5 +56,12 @@
     </p>
   </div>
 
-  <button type="submit" [disabled]="myForm.invalid">Sign In</button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="myForm.invalid"
+  >
+    Sign In
+  </button>
 </form>
