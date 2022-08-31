@@ -9,7 +9,7 @@ import { Product } from 'src/interfaces/Products';
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
-  search: string = 'binoculars';
+  search: string = 'headphones';
 
   constructor(private productsService: ProductsService) {
     this.getAll();

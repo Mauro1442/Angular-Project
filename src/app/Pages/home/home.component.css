@@ -6,9 +6,10 @@
 }
 #card {
   width: 300px;
-  margin: 25px;
+  margin: 20px;
   display: inline-block;
   justify-content: flex-start;
+  padding: 20px;
 }
 body {
   background-color: gray;
